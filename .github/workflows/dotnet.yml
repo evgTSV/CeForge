@@ -34,6 +34,8 @@ jobs:
       with:
         path: ${{ env.NUGET_PACKAGES }}
         key: ${{ runner.os }}.nuget.${{ hashFiles('**/*.csproj', 'Directory.Packages.props') }}
+    - name: ↪️ Restore ↩️
+      run: dotnet restore
     - name: 🛠️ Build 🛠️
       run: dotnet build --no-restore
     - name: 🧪 Test 🧪
